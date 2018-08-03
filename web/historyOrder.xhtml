@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>历史订单</title>
+		#{customerPage.historyOrder()}
+		<style type="text/css">
+			.outputType{
+				height: 140px;
+				width: 100px;
+				padding-top: 20px;
+				float: left;
+			}
+		</style>
+    </h:head>
+    <h:body>
+		<div style="width:660px;text-align: center;margin: 0 auto;margin-top: 10px;">
+			<h2><h:outputText value="你还没购买过任何商品"  rendered="#{customerPage.orderList.size() eq 0}"/></h2>
+			<ui:repeat var="product" value="#{customerPage.productList}" varStatus="s">
+				<div style="width: 660px;height: 160px;float: left;background-color: antiquewhite;margin-top: 10px;">
+					<div style="height: 160px;width: 160px;float: left;">
+						<h:graphicImage value="#{product.imageAddr}" style="width: 160px;height: 160px;"/>
+					</div>
+					<div class="outputType">
+						<h:outputText value="名称：#{product.name}"/>
+					</div>
+					<div class="outputType">
+						<h:outputText value="￥#{product.price}"/>
+					</div>
+					<div class="outputType">
+						<h:outputText value="数量：#{customerPage.getAmount(s.index)}"/>
+					</div>
+					<div class="outputType">
+						<h:form>
+							<h:outputText value="#{customerPage.getOrderState(s.index)}"/>
+						</h:form>
+					</div>
+					
+				</div>
+			</ui:repeat>
+		</div>
+    </h:body>
+</html>
+

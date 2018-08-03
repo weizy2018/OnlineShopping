@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>upload images</title>
+		<script type="text/javascript">
+			function imgPreview(fileDom){
+				//判断是否支持FileReader
+				if (window.FileReader) {
+					var reader = new FileReader();
+				} else {
+					alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+				}
+
+				//获取文件
+				var file = fileDom.files[0];
+				var imageType = /^image\//;
+				//是否是图片
+				if (!imageType.test(file.type)) {
+					alert("请选择图片！");
+					return;
+				}
+				//读取完成
+				reader.onload = function(e) {
+					//获取图片dom
+					var img = document.getElementById("preview");
+					//图片路径设置为读取的图片
+					img.src = e.target.result;
+				};
+				reader.readAsDataURL(file);
+			}
+		</script>
+    </h:head>
+    <h:body>
+		<center>
+					<img style="width: 200px;" id="preview" />
+					<form method="post" action="UploadServlet" enctype="multipart/form-data">
+						<table>
+							<tr>
+								<td style="width: 100px;height: 36px;">商品图片</td>
+								<td><input type="file" name="file" onchange="imgPreview(this)" style="width: 300px;	height: 36px;" /></td>
+							</tr>
+							<tr>
+								<td style="width: 100px;height: 36px;">商品名称</td>
+								<td><input type="text" name="productName" style="width: 300px;	height: 36px;"/></td>
+							</tr>
+							<tr>
+								<td style="width: 100px;height: 36px;">商品价格</td>
+								<td><input type="text" name="productPrice" style="width: 300px;	height: 36px;"/></td>
+							</tr>
+							<tr>
+								<td style="width: 100px;height: 36px;">商品数量</td>
+								<td><input type="text" name="productAmount" style="width: 300px;height: 36px;"/></td>
+							</tr>
+							<tr>
+								<td style="width: 100px;height: 36px;">商品描述</td>
+								<td><input type="text" name="productDescribe" style="width: 300px;height: 36px;"/></td>
+							</tr>
+							<tr>
+								<td>商品类别</td>
+								<td><input type = "radio" name = "radio1" value = "生活用品"/>生活用品
+									<input type = "radio" name = "radio1" value = "玩具"/>玩具
+									<input type = "radio" name = "radio1" value = "美食"/>美食
+									<input type = "radio" name = "radio1" value = "美食2"/>美食2
+									<input type = "radio" name = "radio1" value = "美食3"/>美食3
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><input type="submit" value="确认" style="width: 300px;height: 36px;"/></td>
+							</tr>
+						</table>
+					</form>
+				</center>
+    </h:body>
+</html>
+

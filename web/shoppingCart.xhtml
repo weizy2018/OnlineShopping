@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>购物车</title>
+        <link type="text/css" rel="stylesheet" href="webStyle.scss"/>
+		<script type="text/javascript">
+			if(window.name!=="bencalie"){
+				location.reload();
+				window.name = "bencalie";
+			}else{
+				window.name = "";
+			}
+		</script>
+		<input type="hidden" id="refreshed" value="no"/>
+		#{shoppingCart.cleared()}
+		#{shoppingCart.getUserOrders(customerPage.id)}
+    </h:head>
+    <h:body style="margin: 0px;padding: 0px;">
+		<div style="width: 1280px;height: 100px;margin: 0 auto;margin-top: 20px;margin-left: 40px;padding-right: 60px;">
+			<div style="height: 100px;width: 210px;float: left;">
+				<h:form>
+					<h:commandButton image="./images/logo.png" action="index" style="outline:none;cursor: pointer;"/>
+				</h:form>
+			</div>
+			<div style="height: 90px;width: 200px;float: right;padding-top: 10px;">
+				<div style="width: 48px;height: 48px;margin: 0 auto;">
+					<h:form>
+						<h:commandButton action="#{customerPage.returnstate()}" image="./images/photo.png" style="outline:none;cursor: pointer;"/>
+					</h:form>
+				</div>
+				<div style="height: 40px;width: 200px;text-align: center;float: left;">
+					<h:outputText value="#{customerPage.name}"/>
+				</div>
+			</div>
+		</div>
+		<div style="height: 4px;width: 1200px;margin: 0 auto;background-color: white;">
+			<hr style="border: 2px solid red"/>
+		</div>
+		
+        <div class="cart_main">
+			<div class="cart_head">
+				<div class="cart_head_info">
+					<h:outputText value="商品信息"/>
+				</div>
+				<div class="cart_head_unitPrice">
+					<h:outputText value="单价"/>
+				</div>
+				<div class="cart_head_amount">
+					<h:outputText value="数量"/>
+				</div>
+				<div class="cart_head_money">
+					<h:outputText value="金额"/>
+				</div>
+				<div class="cart_head_opr">
+					<h:outputText value="操作"/>
+				</div>
+			</div>
+			
+			<div style="width: 60px;float: left;">
+				<h:form>
+					<ui:repeat value="#{shoppingCart.ordersList}" var="order" varStatus="s">
+						<div style="width: 60px;height: 184px;background-color: azure;float: left;">
+							<div style="height: 24px;width: 60px;background-color: white;"></div>
+							<h:selectManyCheckbox value="#{shoppingCart.selectedOrder}">
+								<f:selectItem itemValue="#{s.index}" itemLabel=""/><!--对应的订单的索引值-->
+							</h:selectManyCheckbox>
+						</div>
+					</ui:repeat>
+					<div style="height: 60px;width: 60px;float: left;"></div>
+					<h:commandButton value="前往支付" rendered="#{shoppingCart.ordersList.size() gt 0}" action="#{shoppingCart.goToPay()}" style="width: 120px;height: 40px;background-color: red;"/>
+				</h:form>
+			</div>
+			<div style="width: 740px;float: left;">
+			<h:form>
+				<ui:repeat var="product" value="#{shoppingCart.productsList}" varStatus="status">
+					
+					<div style="width: 700px;height: 24px;float: left;padding-left: 56px;"><!--显示商店名称 -->
+						<h:outputText value="店铺:"/>
+						<h:commandLink value="#{shoppingCart.getStoreName(status.index)}"/>
+					</div>
+					<div class="cart_product" style="width: 740px;">
+						<div class="cart_image" >
+							<h:graphicImage value="#{shoppingCart.getOneProduct(status.index).imageAddr}" style="width: 160px;padding-top: 10px;"/>
+						</div>
+						<div class="cart_info"> 
+							<div style="width: 140px;padding-top: 10px;padding-left: 5px;float: left;">
+								<h:outputText value="产品:"/>
+								<h:outputText value="#{shoppingCart.getOneProduct(status.index).name}"/><br/><br/>
+								<h:outputText value="产品描述:"/><br/>
+								<h:outputText value="#{shoppingCart.getOneProduct(status.index).description}"/><br/>
+							</div>
+						</div>
+						<div style="width: 100px;padding-top: 20px;text-align: center;float: left;">
+							<h:outputText value="#{shoppingCart.getOneProduct(status.index).price}"/>
+						</div>
+						<div style="width: 100px;padding-top: 20px;text-align: center;float: left;">
+							<div style="height: 24px;width: 16px;float: left;">
+									<h:commandButton image="./images/sub.png" action="#{shoppingCart.subOrder(status.index)}"/>
+							</div>
+							<div style="height: 24px;width: 54px;float: left;background-color: lavenderblush;">
+								<h:outputText value="#{shoppingCart.getOneOrder(status.index).amount}" />
+							</div>
+							<div style="height: 24px;width: 16px;float: left;">
+									<h:commandButton image="./images/add.png" action="#{shoppingCart.addOrder(status.index)}"/>
+							</div>
+						</div>
+						<div style="width: 100px;padding-top: 20px;text-align: center;float: left;">
+							<h:outputText value="#{shoppingCart.getOneProduct(status.index).price*shoppingCart.getOneOrder(status.index).amount}"/>
+						</div>
+						<div style="width: 100px;padding-top: 20px;text-align: center;float: left;">
+							<h:commandLink action="#{shoppingCart.deleteOrder(status.index)}" immediate="true" value="删除"/>
+						</div>
+					</div>
+					
+				</ui:repeat>
+			</h:form>
+			</div>
+        </div>
+		<div style="width: 1200px;height: 400px;background-color: white;float: left;"></div>
+		
+    </h:body>
+</html>
+

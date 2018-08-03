@@ -1,0 +1,14 @@
+images/fruit/guoshu_03.jpg
+images/fruit/guoshu_04.jpg
+images/fruit/guoshu_06.jpg
+
+images/fruit/huiju_04.jpg
+images/fruit/huiju_01.jpg
+images/fruit/huiju_06.jpg
+images/fruit/huiju_08.jpg
+
+images/fruit/jidan_01.jpg
+images/fruit/niuyang_05.jpg
+images/fruit/niuyang_06.jpg
+images/fruit/niuyang_07.jpg
+images/fruit/niuyang_08.jpg

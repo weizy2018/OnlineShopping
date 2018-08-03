@@ -1,0 +1,15 @@
+lifeproduct
+images/lifeproduct/diwen_04.jpg
+
+
+images/lifeproduct/chuwei_07.jpg
+images/lifeproduct/chuwei_08.jpg
+images/lifeproduct/chuwei_jiating_02.jpg
+images/lifeproduct/chuwei_zhipin_03.jpg
+images/lifeproduct/gehu_kouqiang_07.jpg
+images/lifeproduct/guochan_chufang_04.jpg
+images/lifeproduct/guochan_qiaokeli_03.jpg
+
+images/lifeproduct/guochan_qiaokeli_05.jpg
+images/lifeproduct/jinkou_09.jpg
+images/lifeproduct/jinkou_bingan_01.jpg

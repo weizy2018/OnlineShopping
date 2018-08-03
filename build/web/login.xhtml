@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>登陆</title>
+        <link type="text/css" rel="stylesheet" href="webStyle.scss"/>
+    </h:head>
+    <h:body style="background-color: #FFF;">
+        <div class="login_top">
+            <div style="height: 72px;float: left;padding-left: 100px;padding-top: 10px;">
+				<h:form>
+					<h:commandButton image="images/logo.png" action="index" style="border: none;outline:none;cursor: pointer;"/>
+				</h:form>
+			</div>
+        </div>
+        <div class="login_left">
+            <div style="margin-left: 60px;margin-top: 60px;">
+				<h:graphicImage value="./images/banner02_2.jpg"/>
+			</div>
+        </div>
+        <div class="login_right">
+            <div class="login_right_form">
+                <div style="margin: 0 auto;">
+                    <center>
+                        <h:messages />
+                        <h:form>
+							<table>
+								<tr>
+									<td class="login_display">&nbsp;</td>
+									<td style="width: 300px;">
+										<div style="display:inline-block;width: 300px;">
+											<div style="float: left;padding-left: 10px;padding-bottom:-16px;font-size: small;font-weight:lighter;"><h:outputText style="text-align: left;" value="1号店用户登录"/></div>
+											<div style="float: right;padding-bottom: -16px;"><h:commandLink value="注册账户" action="register" style="text-align: right;" immediate="true"/></div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td><h:outputText value="账号" class="login_display"/></td>
+									<td><h:inputText value="#{customerPage.id}" class="login_input" style="margin-top: 0px" required="true" requiredMessage="账号不能为空"/></td>
+								</tr>
+								<tr>
+									<td><h:outputText value="密码" class="login_display"/></td>
+									<td><h:inputSecret value="#{customerPage.password}" class="login_input" required="true" requiredMessage="密码不能为空"/></td>
+								</tr>
+								<tr>
+									<td colspan="2"><h:commandButton action="#{customerPage.check()}" value="登陆" class="login_input" style="width: 346px;"/></td>
+								</tr>
+							</table>
+                        </h:form>
+                    </center>
+                </div>
+                <p>&nbsp;</p>
+                <h:outputText value="#{customerPage.temp}" style="text-align: center;color: red;"/>
+            </div>
+        </div>
+    </h:body>
+</html>
+

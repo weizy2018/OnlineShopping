@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>注册商店</title>
+    </h:head>
+    <h:body>
+		<div style="width: 1280px;margin: 0 auto;">
+			<div style="width: 1280px;height: 100px;float: left;margin-top: 20px;margin-left: 40px;">
+
+					<div style="height: 100px;width: 210px;float: left;">
+						<h:form>
+							<h:commandButton image="./images/logo.png" action="index"  style="outline:none;cursor: pointer;"/>
+						</h:form>
+					</div>
+					<div style="width: 200px;height: 100px;float: left;"></div>
+					<div style="height:90px;width: 510px;float:left;padding-top: 10px;">
+						<div style="width: 400px;height: 45px;border:red solid;float: left;">
+							<h:form>
+								<h:inputText style="height: 40px;width: 300px;float: left;border: none;outline:none;" value="#{search.keyword}"/>
+								<div style="height: 45px;width: 90px;background-color: red;float: right;">
+									<h:commandButton value="搜索商城" action="searchResult" style="width: 90px;height: 45px;font-size: 18px;border: none;cursor: pointer;background-color: red;color: white;outline:none;cursor: pointer;"/>
+								</div>
+							</h:form>
+						</div>
+					</div>
+					<div style="width: 130px;height: 90px;float: left;padding-top: 10px;">
+						<div style="height: 45px;width: 120px;float: left;">
+							<h:form>
+								<h:commandButton image="./images/cart.png" action="#{customerPage.shoppingCart()}" style="height: 45px;width: 120px;outline:none;cursor: pointer;"/>
+							</h:form>
+						</div>
+					</div>
+					<div style="height: 90px;width: 200px;float: left;padding-top: 10px;">
+						<div style="width: 48px;height: 48px;margin: 0 auto;">
+							<h:form>
+								<h:commandButton action="#{customerPage.returnstate()}" image="./images/photo.png"/>
+							</h:form>
+						</div>
+						<div style="height: 40px;width: 200px;text-align: center;float: left;">
+							<h:outputText value="#{customerPage.name}"/>
+						</div>
+					</div>
+			</div>
+			<div style="width: 1280px;float: left;margin-top: 26px;">
+				<hr style="border: 2px solid red"/>
+				<h1 style="text-align: center;"><h:outputText value="店铺注册"/></h1>
+				<p style="text-align: center;color: red;"><h:outputText rendered="#{myStore.repeat}" value="该店铺名已经存在，请另起名称"/></p>
+				<h:messages style="text-align: center;color: red;"/>
+				<center>
+					<h:form>
+						<table style="border-spacing: 10px 30px">
+							<tr>
+								<td><h:outputText value="店铺名称" style="width: 100px;height: 36px;"/></td>
+								<td><h:inputText value="#{myStore.storeName}" style="width: 300px;	height: 36px;" required="true" requiredMessage="店铺名称不能为空"/></td>
+							</tr>
+							<tr>
+								<td><h:outputText value="店铺描述" style="width: 100px;height: 36px;"/></td>
+								<td><h:inputTextarea cols="40" rows="6" value="#{myStore.intruduction}" required="true" requiredMessage="店铺描述不能为空"/></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><h:commandButton value="确认注册" action="#{myStore.register(customerPage.id)}" style="width: 300px;height: 36px;background-color: red;outline:none;cursor: pointer;"/></td>
+							</tr>
+						</table>
+					</h:form>
+				</center>
+			</div>
+		</div>
+    </h:body>
+</html>
+

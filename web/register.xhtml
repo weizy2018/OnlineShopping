@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>register</title>
+		<link type="text/css" rel="stylesheet" href="webStyle.scss"/>
+    </h:head>
+    <h:body>
+		<div>
+			<div class="login_top">
+				<div style="height: 72px;float: left;padding-left: 100px;padding-top: 10px;">
+					<h:form>
+						<h:commandButton image="images/logo.png" action="index" style="border: none;outline:none;cursor: pointer;"/>
+					</h:form>
+				</div>
+			</div>
+			
+			
+			<div class="register_main">
+				<hr/><br/><br/>
+				<div style="width: 800px;margin: 0 auto;">
+					<h2><h:outputText value="用户注册" style="text-align: center;"/></h2><br/><br/>
+					<h:outputText value="该账户已经存在" style="text-align: center;color: red;" rendered="#{customerPage.whetherRepeat}"/>
+					<h:outputText value="密码不一致" style="text-align: center;color: red;" rendered="#{!customerPage.identical}"/>
+					<!--进来先清除数据-->
+					#{customerPage.clearData()}
+					<h:form>
+						<center>
+						<table style="border-spacing: 10px 30px">
+							<tr>
+								<td><h:outputText value="账号" class="register_main_text"/></td>
+								<td><h:inputText value="#{customerPage.registerId}" class="register_main_input" required="true" requiredMessage="账号不能为空"/></td>
+							</tr>
+							<tr>
+								<td><h:outputText value="昵称" class="register_main_text"/></td>
+								<td><h:inputText value="#{customerPage.registerName}" class="register_main_input"/></td>
+							</tr>
+							<tr>
+								<td><h:outputText value="设置密码" class="register_main_text"/></td>
+								<td><h:inputSecret value="#{customerPage.registerPassword}" class="register_main_input" required="true" requiredMessage="密码不能为空"/></td>
+							</tr>
+							<tr>
+								<td><h:outputText value="确认密码" class="register_main_text"/></td>
+								<td><h:inputSecret value="#{customerPage.registerPasswordSure}" class="register_main_input" required="true" requiredMessage="请填写确认密码"/></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><h:commandButton value="开始注册" action="#{customerPage.registerCheck()}" class="register_main_input"/></td>
+							</tr>
+						</table>
+						</center>
+					</h:form>
+					<h:messages style="color: red;text-align: center;"/>
+				</div>
+				
+			</div>
+		</div>
+    </h:body>
+</html>
+

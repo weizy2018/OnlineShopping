@@ -1,0 +1,304 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 24, 2018, 2:44:18 PM
+    Author     : weizy
+*/
+.head_top{
+    height: 100px;
+    width: 100%;
+    background-color:gainsboro;
+}
+.head_top_bottom{
+	height: 54px;
+	width: 100%;
+	float: left;
+}
+.head_top_bottom_sort{
+	height: 30px;
+	width: 20%;
+	padding-left: 74px;
+	padding-top: 24px;
+	text-align: center;
+	
+}
+.head_left{
+    height: 100px;
+    width: 280px;
+    float: left;
+}
+.head_search{
+    height: 100px;
+    width: 750px;
+    float:left;
+}
+.head_search_text{
+    height: 42px;
+    width: 706px;
+    float: left;
+    margin: 25px;
+    /*background-repeat: no-repeat;*/
+    background-image: url(images/search.png);
+}
+.input{
+    height: 28px;
+    width: 654px;
+    float: left;
+    border: none;
+    outline:none;
+    margin: 4px;
+}
+.btstyle{
+    height: 40px;
+    width: 40px;
+    margin: 2px;
+}
+.cart{
+    float: left;
+    height: 100px;
+}
+.cartbt{
+    margin: 25px;
+}
+.main_left{
+    padding-top:20px;
+    float:left;
+    height: 380px;
+    width: 300px;
+    background-color:lavender;
+}
+span{
+    /*padding:5px;*/
+    width:100%;
+    height:30px;
+    text-align: center;
+    /*background-color: #938585;*/
+    float:left;
+    /*border:1px solid #eee;*/
+}
+a:link {color:black;}
+a:visited{color:black;}
+a:hover{color:red;}
+a:active{color:black;}
+.main_right{
+    width: 920px;
+    float: left;
+}
+.main_bottom{
+	width: 1220px;
+	float: left;
+}
+/*.main_bottom_product{
+	background-color: white;
+	height: 240px;
+	width: 220px;
+	float: left;
+}*/
+.picdiv{
+	background-color: white;
+	height: 280px;
+	width: 234px;
+	padding: 2px;
+	background-color: white;
+	border-right: 1px solid #eee;
+	float: left;
+	transition: all 0.6s;
+}
+.picdiv:hover{
+	transform: scale(1.06);
+}
+.pic1{
+	height: 230px;
+	width: 230px;
+	cursor: pointer;
+	margin: 0 auto;
+	/*transition: all 0.6s;*/
+}
+/*.pic1:hover{
+  transform: scale(1.06);
+}*/
+/*#picdiv h:graphicImage{
+	height: 220px;
+	width: 220px;
+	cursor: pointer;
+}*/
+.start{
+    height: 200px;
+    width: 150px;
+    float: left;
+    padding: 6px;
+}
+.login_top{
+    width: 100%;
+    height: 100px;
+    border: 1px;
+}
+.login_left{
+    width: 55%;
+    height: 540px;
+    float: left;
+    margin: 0px;
+    background-color: beige;
+}
+.login_right{
+    width: 45%;
+    height: 540px;
+    float: left;
+    margin: 0px;
+    background-color: beige;
+}
+.login_right_form{
+    height: 450px;
+    width: 400px;
+    margin: 40px;
+    padding: 20px;
+    padding-top: 5px;
+    background-color: whitesmoke;
+}
+.login_display{
+	height: 42px;
+	width: 46px;
+}
+.login_input{
+    height: 42px;
+    width: 300px;
+    margin: 10px;
+}
+.login_message{
+    width: 100%;
+    height: 56px;
+    
+}
+.cart_main{
+    width: 800px;
+    //height: 1200px;
+    margin: 0px auto;
+}
+.cart_head{
+	width: 800px;
+    height: 40px;
+	float:left;
+	line-height: 40px;
+}
+.cart_head_info{
+	width: 365px;
+	height: 40px;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+}
+.cart_head_unitPrice{
+	width: 100px;
+	height: 40px;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+	
+}
+.cart_head_amount{
+	width: 100px;
+	height: 40px;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+}
+.cart_head_money{
+	width: 100px;
+	height: 40px;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+}
+.cart_head_opr{
+	width: 100px;
+	height: 40px;
+	float: left; 
+	text-align: center;
+	line-height: 40px;
+}
+.cart_product{
+    width: 740px;
+    height: 160px;
+    background-color: azure;
+    float: left;
+    margin: 0px auto;
+	margin-top: 0px;
+	//margin-bottom: 6px;
+}
+.cart_image{
+    height: 200px;
+    width: 160px;
+    float: left;
+}
+.cart_info{
+    height: 200px;
+    width: 140px;
+    float: left;
+}
+.result_main{
+	width: 800px;
+	height: 900px;
+	margin: 0px auto;
+	background-color: azure;
+}
+.search_product{
+	width: 800px;
+	height: 200px;
+	margin: 5px;
+	float: left;
+}
+.search_product_image{
+	width: 140px;
+	height: 180px;
+	float: left;
+}
+.search_product_text{
+	width: 650px;
+	height: 180px;
+	float: left;
+}
+/*重置样式*/  
+*{margin: 0;padding: 0; list-style: none;}  
+/*wrap的轮播图和切换按钮样式*/  
+.wrap{height: 400px;width: 920px;margin: 0px auto; overflow: hidden;position: relative;}  
+.wrap ul{position: absolute;}  
+.wrap ul li{height: 400px;}  
+.wrap ul li img{height: 400px;width: 920px;}
+.wrap ol{position: absolute;right: 10px;bottom: 10px;}  
+.wrap ol li{height: 20px;width: 20px;  background-color:#fff;border: 1px solid #eee; margin-left: 10px;float:left; line-height: 20px; text-align: center;}  
+.wrap ol li.active{background-color: #330099; color: #fff; border: 2px solid green;} 
+.register_main{
+	width: 1200px;
+    height: 600px;
+    margin:0 auto;
+}
+.register_main_text{
+	width: 100px;
+	height: 36px;
+}
+.register_main_input{
+	width: 300px;
+	height: 36px;
+}
+.detail_head{
+	width: 1280px;
+	height: 100px;
+	float: left;
+	margin-top: 20px;
+	display: inline-block;
+	background-color: aqua;
+}
+.detail_logo{
+	height: 100px;
+	width: 210px;
+	float: left;
+}
+.detail_search{
+	height:100px;
+	width: 450px;
+	background-color: background;
+	float:left;
+}

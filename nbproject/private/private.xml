@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/havaStore.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/shoppingCart.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/src/java/entities/Customer.java</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/personalInfo.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/index.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/src/java/bean/MyStore.java</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/checkForPayment.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/myStore.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/productDetails.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/webStyle.scss</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/login.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/src/java/bean/PayForSelected.java</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/src/java/bean/InitialPage.java</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/src/java/bean/ShoppingCart.java</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/storeProductDetails.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/src/java/bean/ProductDetails.java</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/noStore.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/page1.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/src/java/session/CustomerFacade.java</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/src/java/bean/Search.java</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/customerInfo.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/register.xhtml</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/src/java/bean/First.java</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/src/java/bean/MainPage.java</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/src/java/bean/Navigation.java</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/src/java/bean/CustomerPage.java</file>
+            <file>file:/D:/NetBeansProjects/Workspace/OnlineShopping/web/addProduct.xhtml</file>
+        </group>
+    </open-files>
+</project-private>

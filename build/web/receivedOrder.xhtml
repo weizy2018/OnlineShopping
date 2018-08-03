@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>待收货</title>
+		#{customerPage.unReciveOrder()}
+		<style type="text/css">
+			.outputType{
+				height: 140px;
+				width: 100px;
+				padding-top: 20px;
+				float: left;
+			}
+		</style>
+		<input type="hidden" id="confirm" value="#{customerPage.confirm}"/>
+		<input type="hidden" id="delete" value="#{customerPage.delete}"/>
+		<script type="text/javascript">
+			var con = document.getElementById("confirm").value;
+			var del = document.getElementById("delete").value;
+			if(con==="确认"){
+				alert("以确认收货");
+			}else if(del==="退货"){
+				alert("订单已退订");
+			}
+		</script>
+    </h:head>
+    <h:body>
+		<div style="width:660px;text-align: center;margin: 0 auto;margin-top: 10px;">
+			<h2><h:outputText value="没有相应的订单"  rendered="#{customerPage.orderList.size() eq 0}"/></h2>
+			<ui:repeat var="product" value="#{customerPage.productList}" varStatus="s">
+				<div style="width: 660px;height: 160px;float: left;margin-top: 10px;">
+					<div style="height: 160px;width: 160px;float: left;">
+						<h:graphicImage value="#{product.imageAddr}" style="width: 160px;height: 160px;"/>
+					</div>
+					<div class="outputType">
+						<h:outputText value="名称：#{product.name}"/>
+					</div>
+					<div class="outputType">
+						<h:outputText value="￥#{product.price}"/>
+					</div>
+					<div class="outputType">
+						<h:outputText value="数量：#{customerPage.getAmount(s.index)}"/>
+					</div>
+					<div class="outputType">
+						<h:form>
+							<h:commandLink value="确认收货" action="#{customerPage.confirmOrder(customerPage.getOrderId(s.index))}"/>
+						</h:form>
+					</div>
+					<div class="outputType">
+						<h:form>
+							<h:commandLink value="退货" action="#{customerPage.deleteUnreceiveOrder(s.index)}"/>
+						</h:form>
+					</div>
+				</div>
+			</ui:repeat>
+		</div>
+    </h:body>
+</html>
+

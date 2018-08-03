@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>我的店铺</title>
+		<link type="text/css" rel="stylesheet" href="webStyle.scss"/>
+    </h:head>
+    <h:body>
+		<div style="width: 1280px;margin: 0 auto;">
+			<div style="width: 1280px;height: 100px;float: left;margin-top: 20px;margin-left: 40px;">
+
+					<div style="height: 100px;width: 210px;float: left;">
+						<h:form>
+							<h:commandButton image="./images/logo.png" action="index" style="outline:none;cursor: pointer;"/>
+						</h:form>
+					</div>
+					<div style="width: 200px;height: 100px;float: left;"></div>
+					<div style="height:90px;width: 510px;float:left;padding-top: 10px;">
+						<div style="width: 400px;height: 45px;border:red solid;float: left;">
+							<h:form>
+								<h:inputText style="height: 40px;width: 300px;float: left;border: none;outline:none;" value="#{search.keyword}"/>
+								<div style="height: 45px;width: 90px;background-color: red;float: right;">
+									<h:commandButton value="搜索商城" action="searchResult" style="width: 90px;height: 45px;font-size: 18px;border: none;cursor: pointer;background-color: red;color: white;outline:none;"/>
+								</div>
+							</h:form>
+						</div>
+					</div>
+					<div style="width: 130px;height: 90px;float: left;padding-top: 10px;">
+						<div style="height: 45px;width: 120px;float: left;">
+							<h:form>
+								<h:commandButton image="./images/cart.png" action="#{customerPage.shoppingCart()}" style="height: 45px;width: 120px;outline:none;cursor: pointer;"/>
+							</h:form>
+						</div>
+					</div>
+					<div style="height: 90px;width: 200px;float: left;padding-top: 10px;">
+						<div style="width: 48px;height: 48px;margin: 0 auto;">
+							<h:form>
+								<h:commandButton action="#{customerPage.returnstate()}" image="./images/photo.png" style="outline:none;cursor: pointer;"/>
+							</h:form>
+						</div>
+						<div style="height: 40px;width: 200px;text-align: center;float: left;">
+							<h:outputText value="#{customerPage.name}"/>
+						</div>
+					</div>
+			</div>
+			<div style="width: 1280px;float: left;">
+				<hr style="border: 2px solid red"/>
+				<div style="width: 1100px;height: 56px;float: left;padding-left: 120px;padding-right: 60px;padding-top: 10px;">
+					<div style="float: left;height: 56px;line-height: 46px;">
+						<h:form>
+							店铺名称：<h:commandLink value="#{myStore.getStoreName(customerPage.id)}" action="storeInfo"/>
+						</h:form>
+					</div>
+					<div style="float: right;height: 56px;">
+						<h:form>
+							<h:commandButton value="添加商品" action="addProduct" style="width: 100px;height: 40px;background-color: red;color: white;outline:none;cursor: pointer;"/>
+						</h:form>
+					</div>
+				</div>
+				<div style="width: 1280px;float: left;">
+					<div style="width: 720px;margin: 0 auto;">
+					<ui:repeat var="product" value="#{myStore.storeProducts(customerPage.id)}" >
+						<div class="picdiv">
+							<h:form>
+								#{productDetails.setModefySuccess("false")}
+								<h:commandButton image="#{product.imageAddr}" class="pic1" action="#{productDetails.showStoreProductDetails(product.id)}"/>
+							<h:outputText value="#{product.name}" style="text-align: center;font-size: 14px;"/><br/>
+							<h:outputText value="￥#{product.price}" style="color: red;font-size: 12px;text-align: center;"/>
+							</h:form>
+						</div>
+					</ui:repeat>
+					</div>
+				</div>
+			</div>
+		</div>
+    </h:body>
+</html>
+
